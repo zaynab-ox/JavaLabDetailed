@@ -11,7 +11,8 @@ package javalabdetailed;
 public class OrderItem extends Item{
     protected int quantity;
     
-    public OrderItem(int id, String name, String category, Double Price, String size){
+    public OrderItem(int id, String name, String category, Double price, String size){
+        super(id, name, category, size, price);
         this.name = name;
         this.id = id;
         this.category = category;
@@ -19,7 +20,15 @@ public class OrderItem extends Item{
         this.size = size;
         this.quantity = 0;
     }
-    
+    public OrderItem(OrderItem other) {
+        this.name = other.name;
+        this.category = other.category;
+        this.price = other.price;
+        this.size = other.size;
+        this.quantity = other.quantity;
+    }
+
+
     public void setQuantity(int qty){
         this.quantity = qty;
     }
@@ -28,5 +37,8 @@ public class OrderItem extends Item{
     }
     public void incrementQuantity(){
         this.quantity++;
+    }
+    public void decrementQuantity(){
+        this.quantity--;
     }
 }

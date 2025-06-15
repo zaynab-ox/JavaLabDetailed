@@ -26,6 +26,6 @@ public class Main {
         JTabbedPane pane = new JTabbedPane();
         frame.add(pane);
         gui.menuBuilder(pane);
-        gui.ordersPage(pane);
+        gui.ordersPage(pane, frame);
     }
 }
